@@ -1,0 +1,66 @@
+
+categories
+
+CREATE TABLE `categories` (
+  `id` INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `img` VARCHAR(150) NOT NULL,
+  `description` TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `products` (
+  `id` INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `category` INT(4) NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `price` VARCHAR(10) NOT NULL,
+  `price_old` VARCHAR(10) NOT NULL,
+  `img` VARCHAR(150) NOT NULL,
+  `description` TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `users` (
+  `id` INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `user_name` VARCHAR(20) NOT NULL,
+  `user_surname` VARCHAR(20) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `phone` INT(100),
+  `region` VARCHAR(30),
+  `city` VARCHAR(30)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `characteristics` (
+  `id` INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id_prod` INT(4) NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `text` VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `reviews` (
+  `id` INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id_prod` INT(4) NOT NULL,
+  `id_user` INT(4) NOT NULL,
+  `text` TEXT NOT NULL,
+  `rating` INT(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `cart` (
+  `id` INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id_user` INT(4) NOT NULL,
+  `mass_prod` VARCHAR(255) NOT NULL,
+  `status` VARCHAR(20)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `wish_list` (
+  `id` INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id_user` INT(4) NOT NULL,
+  `mass_prod` VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
